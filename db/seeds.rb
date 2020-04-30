@@ -12,21 +12,28 @@ lille = City.create(name: "Lille", zip_code: "59000")
 lyon = City.create(name: "Lyon", zip_code: "69000")
 puts "3 villes ajoutés"
 #Création de 2 docteurs et 3 patients dans la BDD
-greg_de_paris = Doctor.create(first_name: "Grégory", last_name: "House", specialty: "Neurochirurgien")
+greg_de_paris = Doctor.new(first_name: "Grégory", last_name: "House", specialty: "Neurochirurgien")
 greg_de_paris.city = paris
-bruce_de_lille = Doctor.create(first_name: "Bruce", last_name: "Banner", specialty: "Radiologue")
+greg_de_paris.save
+bruce_de_lille = Doctor.new(first_name: "Bruce", last_name: "Banner", specialty: "Radiologue")
 bruce_de_lille.city = lille
-louis_de_paris = Doctor.create(first_name: "Louis", last_name: "Pasteur", specialty: "Virologue")
+bruce_de_lille.save
+louis_de_paris = Doctor.new(first_name: "Louis", last_name: "Pasteur", specialty: "Virologue")
 louis_de_paris.city = paris
-emmett_de_lyon = Doctor.create(first_name: "Emmett", last_name: "Brown", specialty: "Futurologue")
+louis_de_paris.save
+emmett_de_lyon = Doctor.new(first_name: "Emmett", last_name: "Brown", specialty: "Futurologue")
 emmett_de_lyon.city = lyon
+emmett_de_lyon.save
 puts "4 docteurs ajoutés avec leur ville"
-allison = Patient.create(first_name: "Allison", last_name: "Cameron")
+allison = Patient.new(first_name: "Allison", last_name: "Cameron")
 allison.city = paris
-pepper = Patient.create(first_name: "Pepper", last_name: "Pots")
+allison.save
+pepper = Patient.new(first_name: "Pepper", last_name: "Pots")
 pepper.city = lille
-franky = Patient.create(first_name: "Franky", last_name: "Vincent")
+pepper.save
+franky = Patient.new(first_name: "Franky", last_name: "Vincent")
 franky.city = lyon
+franky.save
 puts "3 patients ajoutés avec leur ville"
 
 
